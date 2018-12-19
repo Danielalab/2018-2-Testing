@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- mateial desing lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <title>Notes App</title>
+</head>
+<body>
+  <div id="root">
+    <!-- form add note -->
+    <form>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+        <label class="mdl-textfield__label" for="sample2">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">add</i>
+      </button>
+    </form>
+    <!-- notes -->
+    <section id="notes-container">
+      <ul class="demo-list-control mdl-list">
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            Bryan Cranston
+          </span>
+          <span class="mdl-list__item-secondary-action">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+              <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked />
+            </label>
+          </span>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <!-- scripts -->
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script type="module" src="./firebase.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
