@@ -1,0 +1,35 @@
+/* general styles */
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .w-60 {
+    width: 60%;
+  }
+
+  .w-100 {
+    width: 100%;
+  }  
+}
