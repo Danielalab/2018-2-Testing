@@ -1,0 +1,19 @@
+{
+  "name": "2018-2-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jest",
+    "firebase-mock",
+    "firebase"
+  ],
+  "author": "Daniela Gonzales",
+  "license": "MIT"
+}
