@@ -24,12 +24,13 @@
   align-items: center;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .w-60 {
     width: 60%;
   }
 
-  .w-100 {
-    width: 100%;
-  }  
 }
