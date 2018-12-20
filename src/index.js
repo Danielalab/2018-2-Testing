@@ -48,6 +48,6 @@ import { addNote, getNotes } from "./firebase.js";
     containerNotesList.innerHTML = templateList;
   }
 
-  getNotes(showNotes)
+  getNotes(showNotes);
 
 })();
