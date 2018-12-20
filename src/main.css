@@ -34,3 +34,7 @@
   }
 
 }
+
+.mdl-checkbox__ripple-container .mdl-ripple {
+  background: rgb(63,81,181);
+}

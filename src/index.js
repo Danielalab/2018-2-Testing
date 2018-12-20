@@ -29,7 +29,23 @@ import { addNote, getNotes } from "./firebase.js";
   });
 
   const showNotes = (notes) => {
-    console.log(notes);
+    let templateList = '';
+    notes.forEach((objNote) => {
+      templateList +=
+        `
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            ${objNote.note}
+          </span>
+          <span class="mdl-list__item-secondary-action">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-${objNote.id}">
+              <input type="checkbox" id="list-checkbox-${objNote.id}" class="mdl-checkbox__input"/>
+            </label>
+          </span>
+        </li>
+        `;
+    });
+    containerNotesList.innerHTML = templateList;
   }
 
   getNotes(showNotes)
