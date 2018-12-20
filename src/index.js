@@ -1,4 +1,4 @@
-import { addNote } from "./firebase.js";
+import { addNote, getNotes } from "./firebase.js";
 
 (() => {
   // seleccionando los elementos del DOM
@@ -9,11 +9,13 @@ import { addNote } from "./firebase.js";
 
   buttonAddNote.addEventListener('click', event => {
     event.preventDefault();
+    // data que muestra el snackbar
     const data = {
       message: '',
       timeout: 2000,
       actionText: 'Undo'
     };
+
     addNote(input.value)
       .then(() => {
         input.value = '';
@@ -25,5 +27,11 @@ import { addNote } from "./firebase.js";
         snackbarContainer.MaterialSnackbar.showSnackbar(data);
       });
   });
+
+  const showNotes = (notes) => {
+    console.log(notes);
+  }
+
+  getNotes(showNotes)
 
 })();
