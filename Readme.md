@@ -15,3 +15,16 @@
         "presets": ["@babel/preset-env"]
       }
 - **_npm install --save-dev @babel/plugin-transform-modules-commonjs_**
+- **_npm install --save-dev eslint_**
+- crear archivo .eslintrc
+      {
+        "env": {
+          "browser": true,
+          "node": true,
+          "es6": true
+        },
+        "parserOptions": {
+          "ecmaVersion": 2018,
+          "sourceType": "module"
+        }
+      }
