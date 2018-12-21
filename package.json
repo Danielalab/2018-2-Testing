@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d lib",
+    "test": "jest --coverage"
   },
   "keywords": [
     "jest",
@@ -15,5 +16,9 @@
     "firebase"
   ],
   "author": "Daniela Gonzales",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "jest": "^23.6.0"
+  }
 }
