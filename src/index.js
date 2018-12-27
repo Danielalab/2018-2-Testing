@@ -35,7 +35,7 @@ import { addNote, getNotes } from "./firebase.js";
         `
         <li class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
-            ${objNote.note}
+            ${objNote.title}
           </span>
           <span class="mdl-list__item-secondary-action">
             <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-${objNote.id}">

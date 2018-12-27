@@ -1,8 +1,9 @@
-import { db } from './config.js';
+// import { db } from './config.js';
+const db = firebase.firestore();
 
 export const addNote = (textNewNote) =>
   db.collection('notes').add({
-    note: textNewNote,
+    title: textNewNote,
     state: false
   })
 
@@ -22,3 +23,12 @@ export const getNotes = (callback) =>
       callback(data);
     }); 
 
+export const getCollectionNotes = () =>
+  db.collection('notes').get()
+    .then((querySnapshot) => {
+      const notes = [];
+      querySnapshot.forEach((doc) => {
+        notes.push({ id: doc.id, ...doc.data()});
+      });
+      return notes;
+    });
