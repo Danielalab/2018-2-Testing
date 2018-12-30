@@ -1,4 +1,5 @@
-// import { db } from './config.js';
+import firebase from './config.js';
+
 const db = firebase.firestore();
 
 export const addNote = (textNewNote) =>
