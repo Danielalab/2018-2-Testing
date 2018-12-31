@@ -11,8 +11,8 @@ export const addNote = (textNewNote) =>
 export const deleteNote = (idNote) =>
   db.collection('notes').doc(idNote).delete()
 
-export const updateNote = (idNote, note) =>
-  db.collection('notes').doc(idNote).update(note)
+// export const updateNote = (idNote, note) =>
+//   db.collection('notes').doc(idNote).update(note)
 
 export const getNotes = (callback) =>
   db.collection('notes')

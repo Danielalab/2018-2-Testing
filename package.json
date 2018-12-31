@@ -6,7 +6,7 @@
   "scripts": {
     "eslint": "eslint .",
     "build": "babel src -d lib",
-    "test": "jest --coverage"
+    "test": "jest --coverage --detectOpenHandles"
   },
   "keywords": [
     "jest",
