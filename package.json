@@ -6,7 +6,7 @@
   "scripts": {
     "eslint": "eslint .",
     "build": "babel src -d lib",
-    "test": "jest --coverage"
+    "test": "jest --coverage --detectOpenHandles"
   },
   "keywords": [
     "jest",
@@ -23,5 +23,8 @@
     "babel-core": "^7.0.0-bridge.0",
     "eslint": "^5.10.0",
     "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "firebase": "^5.7.2"
   }
 }

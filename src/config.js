@@ -1,4 +1,6 @@
 // Initialize Firebase
+import firebase from 'firebase';
+
 const config = {
   apiKey: "AIzaSyBeFAgWAS8s7lD2mxSqMeKZXQJYurraKR8",
   authDomain: "notas-aa353.firebaseapp.com",
@@ -9,5 +11,5 @@ const config = {
 };
 
 firebase.initializeApp(config);
-
+export default firebase;
 // export const db = firebase.firestore();
