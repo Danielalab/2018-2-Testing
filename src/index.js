@@ -1,4 +1,4 @@
-import { addNote, getNotes } from "./firebase.js";
+import { addNote, getNotes, deleteNote } from "./firebase.js";
 
 (() => {
   // seleccionando los elementos del DOM
@@ -7,7 +7,7 @@ import { addNote, getNotes } from "./firebase.js";
   const containerNotesList = document.getElementById('notes-list');
   const snackbarContainer = document.getElementById('demo-snackbar');
 
-  buttonAddNote.addEventListener('click', event => {
+  buttonAddNote.addEventListener('click', (event) => {
     event.preventDefault();
     // data que muestra el snackbar
     const data = {
@@ -28,6 +28,16 @@ import { addNote, getNotes } from "./firebase.js";
       });
   });
 
+  const addEventsToDeleteButtons = () => {
+    const btnsDelete = document.querySelectorAll('.btn-delete');
+    [...btnsDelete].forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        deleteNote(id);
+      })
+    })
+  }
+
   const showNotes = (notes) => {
     let templateList = '';
     notes.forEach((objNote) => {
@@ -38,14 +48,15 @@ import { addNote, getNotes } from "./firebase.js";
             ${objNote.title}
           </span>
           <span class="mdl-list__item-secondary-action">
-            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-${objNote.id}">
-              <input type="checkbox" id="list-checkbox-${objNote.id}" class="mdl-checkbox__input"/>
-            </label>
+            <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored btn-delete" data-id="${objNote.id}">
+              <i class="material-icons">delete_outline</i>
+            </button>
           </span>
         </li>
         `;
     });
     containerNotesList.innerHTML = templateList;
+    addEventsToDeleteButtons();
   }
 
   getNotes(showNotes);
