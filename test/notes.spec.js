@@ -1,6 +1,7 @@
-import { addNote, getCollectionNotes } from "../src/firebase";
+import firebase from "../_mocks_/firebase.js";
+global.firebase = firebase;
 
-// jest.mock('../src/_mocks_/firebase.js');
+import { addNote, getCollectionNotes } from "../src/firebase.js";
 
 describe('lista de notas', () => {
   it('Debería porder agregar una nota', () => {
@@ -13,4 +14,3 @@ describe('lista de notas', () => {
   });
 })
 
-// https://github.com/facebook/jest/issues/6913

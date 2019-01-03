@@ -1,21 +1,17 @@
-import firebase from './config.js';
-
-const db = firebase.firestore();
-
 export const addNote = (textNewNote) =>
-  db.collection('notes').add({
+  firebase.firestore().collection('notes').add({
     title: textNewNote,
     state: false
   })
 
 export const deleteNote = (idNote) =>
-  db.collection('notes').doc(idNote).delete()
+  firebase.firestore().collection('notes').doc(idNote).delete()
 
-// export const updateNote = (idNote, note) =>
-//   db.collection('notes').doc(idNote).update(note)
+export const updateNote = (idNote, note) =>
+  firebase.firestore().collection('notes').doc(idNote).update(note)
 
 export const getNotes = (callback) =>
-  db.collection('notes')
+  firebase.firestore().collection('notes')
     .onSnapshot((querySnapshot) => {
       const data = [];
       querySnapshot.forEach((doc) => {
@@ -25,7 +21,7 @@ export const getNotes = (callback) =>
     }); 
 
 export const getCollectionNotes = () =>
-  db.collection('notes').get()
+  firebase.firestore().collection('notes').get()
     .then((querySnapshot) => {
       const notes = [];
       querySnapshot.forEach((doc) => {
