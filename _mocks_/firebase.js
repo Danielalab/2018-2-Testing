@@ -9,8 +9,8 @@ const firestore = jest.fn(() => ({
   })
 }))
 
-const firebase = jest.mock('../src/config.js', () => ({
-  firestore
-}));
+const firebase = jest.genMockFromModule('../src/firebase.js');
+
+firebase.firestore = firestore;
 
 export default firebase;

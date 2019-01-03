@@ -1,6 +1,3 @@
-// import { db } from './config.js';
-import firebase from './config.js';
-
 export const addNote = (textNewNote) =>
   firebase.firestore().collection('notes').add({
     title: textNewNote,

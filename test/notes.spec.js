@@ -1,4 +1,6 @@
 import firebase from "../_mocks_/firebase.js";
+global.firebase = firebase;
+
 import { addNote, getCollectionNotes } from "../src/firebase.js";
 
 describe('lista de notas', () => {
@@ -12,4 +14,3 @@ describe('lista de notas', () => {
   });
 })
 
-// https://github.com/facebook/jest/issues/6913
