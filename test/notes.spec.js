@@ -1,5 +1,20 @@
-import firebase from "../_mocks_/firebase.js";
-global.firebase = firebase;
+// configurando firebase mock
+const firebasemock = require('firebase-mock');
+const mockauth = new firebasemock.MockFirebase();
+const mockfirestore = new firebasemock.MockFirestore();
+mockfirestore.autoFlush();
+mockauth.autoFlush();
+
+global.firebase = firebasemock.MockFirebaseSdk(
+  // use null if your code does not use RTDB
+  path => (path ? mockdatabase.child(path) : null),
+  () => mockauth,
+  () => {
+    return mockfirestore;
+  }
+);
+
+// iniciando tests
 
 import { addNote, getCollectionNotes } from "../src/firebase.js";
 
