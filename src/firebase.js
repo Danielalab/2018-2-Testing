@@ -7,9 +7,6 @@ export const addNote = (textNewNote) =>
 export const deleteNote = (idNote) =>
   firebase.firestore().collection('notes').doc(idNote).delete()
 
-export const updateNote = (idNote, note) =>
-  firebase.firestore().collection('notes').doc(idNote).update(note)
-
 export const getNotes = (callback) =>
   firebase.firestore().collection('notes')
     .onSnapshot((querySnapshot) => {
@@ -18,7 +15,7 @@ export const getNotes = (callback) =>
         data.push({ id: doc.id, ...doc.data() })
       });
       callback(data);
-    }); 
+    });
 
 export const getCollectionNotes = () =>
   firebase.firestore().collection('notes').get()

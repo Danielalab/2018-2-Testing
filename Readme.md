@@ -28,3 +28,12 @@
           "sourceType": "module"
         }
       }
+
+- app corre
+- escribir test
+- correr test (x falla)
+- intro modulos ES6 (recordar)
+- babel
+- corre test
+- crear test
+- correr y falla (firebas eis not definido)
