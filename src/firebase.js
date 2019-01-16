@@ -19,13 +19,3 @@ export const getNotes = (callback) =>
       });
       callback(data);
     }); 
-
-export const getCollectionNotes = () =>
-  firebase.firestore().collection('notes').get()
-    .then((querySnapshot) => {
-      const notes = [];
-      querySnapshot.forEach((doc) => {
-        notes.push({ id: doc.id, ...doc.data()});
-      });
-      return notes;
-    });
