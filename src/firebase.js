@@ -1,3 +1,6 @@
+export const signIn = (email, password) =>
+  firebase.auth().signInWithEmailAndPassword(email, password)
+
 export const addNote = (textNewNote) =>
   firebase.firestore().collection('notes').add({
     title: textNewNote,
