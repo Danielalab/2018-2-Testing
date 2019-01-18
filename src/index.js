@@ -1,4 +1,6 @@
-import { addNote, getNotes, deleteNote } from "./firebase.js";
+import { addNote, getNotes, deleteNote, signIn } from "./firebase.js";
+import Login from './templates/login.js';
+import Home from './templates/notes.js';
 
 (() => {
   const root = document.querySelector('#root');
