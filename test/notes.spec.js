@@ -39,36 +39,3 @@ describe('lista de notas', () => {
       ))
   })
 })
-
-// configurando firebase mock
-// const firebasemock = require('firebase-mock');
-// const mockauth = new firebasemock.MockFirebase();
-// const mockfirestore = new firebasemock.MockFirestore();
-// mockfirestore.autoFlush();
-// mockauth.autoFlush();
-
-// global.firebase = firebasemock.MockFirebaseSdk(
-//   // use null if your code does not use RTDB
-//   path => (path ? mockdatabase.child(path) : null),
-//   () => mockauth,
-//   () => {
-//     return mockfirestore;
-//   }
-// );
-
-// // iniciando tests
-
-// import { addNote, getNotes } from "../src/firebase.js";
-
-// describe('lista de notas', () => {
-//   it('Debería porder agregar una nota', () => {
-//     return addNote('preparar la pildora')
-//       .then(() => getNotes(
-//         (data) => {
-//           const result = data.find((note) => note.title === 'preparar la pildora');
-//           expect(result.title).toBe('preparar la pildora');
-//         }
-//       ))
-//   });
-// })
-
