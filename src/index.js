@@ -3,7 +3,7 @@ import Login from './templates/login.js';
 import Home from './templates/notes.js';
 
 (() => {
-  const root = document.querySelector('#root');
+  const root = document.getElementById('root');
 
   // seleccionando los elementos del DOM
   const showHome = () => {
@@ -63,7 +63,8 @@ import Home from './templates/notes.js';
 
   const showSignIn = () => {
     root.innerHTML = '';
-    root.innerHTML = Login();
+    const login = Login();
+    root.appendChild(login);
 
     // selecccionando elementos del DOM
     const btnSignIn = document.querySelector('#btn-sign-in');
