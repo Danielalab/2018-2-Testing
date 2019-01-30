@@ -1,4 +1,23 @@
-export default () => {
+import { addNoteOnSubmit, deleteNoteOnSubmit } from "../view-controller.js";
+
+const itemNote = (objNote) => {
+  const divElement = document.createElement('div');
+  divElement.classList.add('mdl-list__item');
+  divElement.innerHTML = `
+    <span class="mdl-list__item-primary-content">
+      <span>${objNote.title}</span>
+    </span>
+    <button class="mdl-list__item-secondary-action" id="btn-deleted-${objNote.id}">
+      <i class="material-icons">delete</i>
+    </button>
+  `;
+  // agregando evento de click al btn eliminar una nota
+  divElement.querySelector(`#btn-deleted-${objNote.id}`)
+    .addEventListener('click', deleteNoteOnSubmit);
+  return divElement;
+}
+
+export default (notes) => {
   const divContainer = document.createElement('div');
   const homeContent = `
     <!-- form add note -->
@@ -18,6 +37,7 @@ export default () => {
     <!-- notes -->
     <section class="w-60 d-flex justify-content-center m-auto">
       <ul class="w-100 demo-list-control mdl-list" id="notes-list">
+      ${notes.map((note) => itemNote(note))}
       </ul>
     </section>
 
@@ -28,5 +48,7 @@ export default () => {
     </div>
   `;
   divContainer.innerHTML = homeContent;
+  const buttonAddNote = divContainer.querySelector('#btn-add-note');
+  buttonAddNote.addEventListener('click', addNoteOnSubmit);
   return divContainer;
 }
