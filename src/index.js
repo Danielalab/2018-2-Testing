@@ -8,7 +8,7 @@ import Home from './templates/notes.js';
   // seleccionando los elementos del DOM
   const showHome = () => {
     root.innerHTML = '';
-    root.innerHTML = Home();
+    root.appendChild(Home());
     const input = document.getElementById('input-new-note');
     const buttonAddNote = document.getElementById('btn-add-note');
     const containerNotesList = document.getElementById('notes-list');
@@ -44,9 +44,9 @@ import Home from './templates/notes.js';
           <span class="mdl-list__item-primary-content">
             <span>${objNote.title}</span>
           </span>
-          <a class="mdl-list__item-secondary-action" id="btn-deleted-${objNote.id}" href="#">
+          <button class="mdl-list__item-secondary-action" id="btn-deleted-${objNote.id}">
             <i class="material-icons">delete</i>
-          </a>
+          </button>
         `;
         containerNotesList.appendChild(divElement);
 
