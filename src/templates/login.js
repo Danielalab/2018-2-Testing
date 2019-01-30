@@ -1,3 +1,5 @@
+import { signInOnSubmit } from "../view-controller";
+
 export default () => {
   const form = document.createElement('form');
   const formContent = `
@@ -21,5 +23,8 @@ export default () => {
   `;
   form.classList.add('d-flex','justify-content-center','align-items-center','flex-direction-column','vh-100');
   form.innerHTML = formContent;
+  // selecccionando elementos del DOM
+  const btnSignIn = form.querySelector('#btn-sign-in');
+  btnSignIn.addEventListener('click', signInOnSubmit);
   return form;
 }
