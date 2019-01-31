@@ -14,7 +14,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 // iniciando tests
 
-import { signIn } from "../src/firebase.js";
+import { signIn } from "../src/controller/controller-firebase.js";
 
 describe('lista de notas', () => {
   it('Debería poder iniciar sesion', () => {

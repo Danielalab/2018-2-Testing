@@ -1,20 +1,20 @@
 import { addNoteOnSubmit, deleteNoteOnClick } from "../view-controller.js";
 
 const itemNote = (objNote) => {
-  const divElement = document.createElement('div');
-  divElement.classList.add('mdl-list__item');
-  divElement.innerHTML = `
+  const liElement = document.createElement('li');
+  liElement.classList.add('mdl-list__item');
+  liElement.innerHTML = `
     <span class="mdl-list__item-primary-content">
       <span>${objNote.title}</span>
     </span>
-    <button class="mdl-list__item-secondary-action" id="btn-deleted-${objNote.id}">
+    <a class="mdl-list__item-secondary-action" id="btn-deleted-${objNote.id}">
       <i class="material-icons">delete</i>
-    </button>
+    </a>
   `;
   // agregando evento de click al btn eliminar una nota
-  divElement.querySelector(`#btn-deleted-${objNote.id}`)
+  liElement.querySelector(`#btn-deleted-${objNote.id}`)
     .addEventListener('click', () => deleteNoteOnClick(objNote));
-  return divElement;
+  return liElement;
 }
 
 export default (notes) => {
