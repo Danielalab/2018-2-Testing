@@ -1,12 +1,14 @@
 import { addNote, deleteNote, signIn } from "./controller/controller-firebase.js";
 
+const changeHash = (hash) =>  {
+  location.hash = hash;
+}
+
 export const signInOnSubmit = () => {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
   signIn(email, password)
-    .then(() =>  {
-      location.hash = '/home';
-    })
+    .then(() => changeHash('/home'))
     .catch(() => {})
 }
 
