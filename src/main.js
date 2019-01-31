@@ -1,4 +1,4 @@
-import { initRouter } from "./index.js";
+import { initRouter } from "./router.js";
 
 const init = () => {
   // Initialize Firebase

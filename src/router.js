@@ -1,6 +1,6 @@
 import Home from './templates/notes.js';
 import Login from './templates/login.js';
-import { getNotes } from './controller-firebase.js';
+import { getNotes } from './controller/controller-firebase.js';
 
 const changeTmp = (hash) => {
   if (hash === '#/' || hash === '' || hash === '#') {

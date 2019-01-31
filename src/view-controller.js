@@ -1,4 +1,4 @@
-import { addNote, deleteNote, signIn } from "./controller-firebase.js";
+import { addNote, deleteNote, signIn } from "./controller/controller-firebase.js";
 
 export const signInOnSubmit = () => {
   const email = document.querySelector('#email').value;

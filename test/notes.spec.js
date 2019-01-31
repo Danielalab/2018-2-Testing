@@ -15,7 +15,7 @@ const fixtureData = {
 
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-import { addNote, getNotes, deleteNote } from "../src/firebase.js";
+import { addNote, getNotes, deleteNote } from "../src/controller/controller-firebase.js";
 
 describe('lista de notas', () => {
   it('Debería porder agregar una nota', (done) => {
