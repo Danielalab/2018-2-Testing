@@ -1,4 +1,4 @@
-import { addNoteOnSubmit, deleteNoteOnSubmit } from "../view-controller.js";
+import { addNoteOnSubmit, deleteNoteOnClick } from "../view-controller.js";
 
 const itemNote = (objNote) => {
   const divElement = document.createElement('div');
@@ -13,7 +13,7 @@ const itemNote = (objNote) => {
   `;
   // agregando evento de click al btn eliminar una nota
   divElement.querySelector(`#btn-deleted-${objNote.id}`)
-    .addEventListener('click', deleteNoteOnSubmit);
+    .addEventListener('click', () => deleteNoteOnClick(objNote));
   return divElement;
 }
 
@@ -37,7 +37,6 @@ export default (notes) => {
     <!-- notes -->
     <section class="w-60 d-flex justify-content-center m-auto">
       <ul class="w-100 demo-list-control mdl-list" id="notes-list">
-      ${notes.map((note) => itemNote(note))}
       </ul>
     </section>
 
@@ -49,6 +48,10 @@ export default (notes) => {
   `;
   divContainer.innerHTML = homeContent;
   const buttonAddNote = divContainer.querySelector('#btn-add-note');
+  const ul = divContainer.querySelector('#notes-list');
+  notes.forEach(note => {
+    ul.appendChild(itemNote(note));
+  });
   buttonAddNote.addEventListener('click', addNoteOnSubmit);
   return divContainer;
 }

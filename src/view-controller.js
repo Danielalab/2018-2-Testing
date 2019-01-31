@@ -33,6 +33,6 @@ export const addNoteOnSubmit = (event) => {
     });
 }
 
-export const deleteNoteOnSubmit = () =>
+export const deleteNoteOnClick = (objNote) =>
   deleteNote(objNote.id)
 

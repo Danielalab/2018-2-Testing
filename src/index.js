@@ -19,6 +19,7 @@ const viewTmp = (routers) => {
   switch (router) {
     case 'home':
       getNotes((notes) => {
+        root.innerHTML = '';        
         root.appendChild(Home(notes));  
       })
       break;
@@ -35,4 +36,3 @@ export const initRouter = () => {
   window.addEventListener('load', changeTmp(window.location.hash))
   if (("onhashchange" in window)) window.onhashchange = () => changeTmp(window.location.hash)
 }
-
