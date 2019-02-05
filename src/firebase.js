@@ -1,8 +1,9 @@
-export const addNote = (textNewNote) =>
-  firebase.firestore().collection('notes').add({
+export const addNote = (textNewNote) => {
+  return firebase.firestore().collection('notes').add({
     title: textNewNote,
     state: false
   })
+}
 
 export const deleteNote = (idNote) =>
   firebase.firestore().collection('notes').doc(idNote).delete()

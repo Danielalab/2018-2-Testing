@@ -1,7 +1,12 @@
-import firebase from "../_mocks_/firebase.js";
-global.firebase = firebase;
+import myMockFirebase from "../_mocks_/firebase.js";
 
-import { addNote, getCollectionNotes } from "../src/firebase.js";
+global.firebase = myMockFirebase();
+console.log(firebase);
+
+
+// jest.mock('../_mocks_/firebase.js');
+
+import { addNote } from "../src/controller-firebase.js";
 
 describe('lista de notas', () => {
   it('Debería porder agregar una nota', () => {
